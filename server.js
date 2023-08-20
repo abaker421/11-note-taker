@@ -1,7 +1,7 @@
 const express= require('express')
 const pageRoutes= require('./routes/pageRoutes.js')
 const apiRoutes= require('./routes/apiRoutes.js')
-const PORT= 3000
+const PORT= process.env.PORT || 3000
 const app= express()
 
 app.use(express.static('public'))
