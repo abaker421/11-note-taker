@@ -44,12 +44,12 @@ router.post('/api/notes', async (req,res) => {
   
     try {
     
-      const content = await fs.readFile(path.join(__dirname,'..', 'db', 'db.json', 'utf-8'))
+      const content = await fs.readFile(dbFilePath, 'utf-8')
       const notes = JSON.parse(content)
   
       const updatedNotes = notes.filter(note => note.id !== id)
 
-      await fs.writeFile(path.join(__dirname,'..', 'db', 'db.json'), JSON.stringify(updatedNotes))
+      await fs.writeFile(path.join(dbFilePath), JSON.stringify(updatedNotes))
   
       res.status(200).json({ message: 'Note deleted successfully' })
     } catch (err) {
