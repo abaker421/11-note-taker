@@ -58,4 +58,4 @@ router.post('/api/notes', async (req,res) => {
     }
   })
 
-module.exports = apiRoutes
+module.exports = router

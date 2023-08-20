@@ -13,4 +13,4 @@ router.get('*', (req,res) =>{
     res.sendFile(path.join(__dirname,'..', 'public', 'index.html'))
 }) //sends all other queries to index.html
 
-module.exports = pageRoutes
+module.exports = router

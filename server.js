@@ -1,6 +1,6 @@
 const express= require('express')
-const pageRoutes= require('./routes/pageRoutes')
-const apiRoutes= require('./routes/apiRoutes')
+const pageRoutes= require('./routes/pageRoutes.js')
+const apiRoutes= require('./routes/apiRoutes.js')
 const PORT= 3000
 const app= express()
 
