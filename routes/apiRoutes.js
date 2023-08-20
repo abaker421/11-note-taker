@@ -46,16 +46,14 @@ router.post('/api/notes', async (req,res) => {
       const content = await fs.readFile(path.join(__dirname,'..', 'db', 'db.json', 'utf-8'))
       const notes = JSON.parse(content)
   
-      // Find and remove the note with the provided id
       const updatedNotes = notes.filter(note => note.id !== id)
-  
-      // Write updated data back to db.json
+
       await fs.writeFile(path.join(__dirname,'..', 'db', 'db.json'), JSON.stringify(updatedNotes))
   
       res.status(200).json({ message: 'Note deleted successfully' })
-    } catch (error) {
-      console.error(error)
-      res.status(500).json({ error: 'Internal server error' })
+    } catch (err) {
+      console.error(err)
+      res.status(500).json({ error: 'Internal error' })
     }
   })
 
