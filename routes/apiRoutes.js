@@ -14,7 +14,7 @@ app.get('/api/notes', async (req,res) => {
     }
 })
 
-app.post('/api/create-pet', async (req,res) => {
+app.post('/api/notes', async (req,res) => {
     try{
     const content= readFile(path.join(__dirname,'..', 'db', 'db.json', 'utf-8'))
     const notes= JSON.parse(content)
