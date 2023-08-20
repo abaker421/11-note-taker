@@ -4,6 +4,15 @@
 
 Week 11 challenge for U of W boot camp. Used starter code to creates routes for the note taking application and deploy it to Heroku
 
+## Table of Contents
+
+[Installation](#installation)<br>
+[Usage](#installation)<br>
+[Features](#features)<br>
+[Documentation](#documentation)<br>
+[Contributing](#contributing)<br>
+[License](#license)<br>
+
 ## Installation
 
 N/A
@@ -14,9 +23,9 @@ Open your web browser and visit " https://note-taker-express-app-5c0216125fde.he
 
 ## Features
 
--Home page upon first open
--Ability to create new notes or view old ones
--Ability to delete notes
+-Home page upon first open<br>
+-Ability to create new notes or view old ones<br>
+-Ability to delete notes<br>
 -All page requests will lead to home page if invalid
 
 ## Documentation
