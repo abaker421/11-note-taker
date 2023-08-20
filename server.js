@@ -8,8 +8,8 @@ app.use(express.static('public'))
 app.use(express.json())
 app.use(express.urlencoded({extended:true}))
 
-app.use(pageRoutes)
 app.use(apiRoutes)
+app.use(pageRoutes)
 
 app.listen(PORT, () => {
     console.log(`listening on port ${PORT}`)

@@ -7,7 +7,7 @@ dbFilePath = path.join(__dirname, "..", "db", "db.json")
 
 router.get('/api/notes', async (req,res) => {
     try{
-    const notes = await JSON.parse(fs.readFile(dbFilePath))
+    const notes = await JSON.parse(await fs.readFile(dbFilePath))
     res.json(notes)
     } catch (err) {
         res.status(500).send(err)
@@ -17,7 +17,7 @@ router.get('/api/notes', async (req,res) => {
 
 router.post('/api/notes', async (req,res) => {
     try{
-    const content= readFile(path.join(dbFilePath, 'utf-8'))
+    const content= await fs.readFile(dbFilePath, 'utf-8')
     const notes= JSON.parse(content)
     
     
@@ -29,7 +29,7 @@ router.post('/api/notes', async (req,res) => {
     
     notes.push(newNote)
     
-    await fs.writeFile(path.join(dbFilePath), JSON.stringify(notes))
+    await fs.writeFile(dbFilePath, JSON.stringify(notes))
     
     res.status(201).json(notes)
 
@@ -54,7 +54,7 @@ router.post('/api/notes', async (req,res) => {
       res.status(200).json({ message: 'Note deleted successfully' })
     } catch (err) {
       console.error(err)
-      res.status(500).json({ error: 'Internal error' })
+      res.status(500).json({ error: 'Internal server error' })
     }
   })
 
